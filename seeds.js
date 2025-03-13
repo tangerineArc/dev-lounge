@@ -19,49 +19,55 @@ async function generateQuery() {
   DELETE FROM post;
   DELETE FROM member;
 
-  INSERT INTO member ( id, username, password_hash, first_name, last_name )
+  INSERT INTO member ( id, username, password_hash, first_name, last_name, membership_status )
   VALUES
     (
       1,
       'tangerine',
       '${hashedPasswords[0]}',
       'Tangerine',
-      'Arc'
+      'Arc',
+      'elite'
     ),
     (
       2,
       'lemon',
       '${hashedPasswords[1]}',
       'Lemon',
-      'Sector'
+      'Sector',
+      'knight'
     ),
     (
       3,
       'wreckerzen',
       '${hashedPasswords[2]}',
       'Swagatam',
-      'Pati'
+      'Pati',
+      'knight'
     ),
     (
       4,
       'oklahoma',
       '${hashedPasswords[3]}',
       'Backus',
-      'Naur'
+      'Naur',
+      'knight'
     ),
     (
       5,
       'ulterior',
       '${hashedPasswords[4]}',
       'Werner',
-      'Heisenberg'
+      'Heisenberg',
+      'knight'
     ),
     (
       6,
       'nihilist',
       '${hashedPasswords[5]}',
       'Friedrich',
-      'Nietzsche'
+      'Nietzsche',
+      'commoner'
     );
 
   INSERT INTO post ( title, description, userId )
@@ -94,37 +100,37 @@ async function generateQuery() {
     (
       'Debugging: The Five Stages of Grief',
       'Denial: "It works on my machine." Anger: "Who wrote this garbage?" Bargaining: "What if I just comment out this part?" Depression: "I have no idea what I''m doing." Acceptance: "Fine, I''ll actually read the documentation."',
-      6
+      1
     ),
     (
       'Tried to explain recursion and got stuck in an infinite loop',
       'It started as a simple explanation: "Recursion is when a function calls itself." But then someone asked, "Can you give an example?" and before I knew it, I was explaining recursion inside my explanation of recursion, and—well, you get the idea.',
-      1
+      2
     ),
     (
       'The joys of being a senior developer (and forgetting everything)',
       'They say experience makes you wiser, but in reality, it just means you''ve forgotten more things than a junior developer has ever learned. From googling "for loop syntax" for the hundredth time to pretending to understand the latest JavaScript framework, join me as I navigate the wonderful world of senior-level confusion.',
-      2
+      3
     ),
     (
       'I accidentally became the "Tech Support" person for my family',
       'One day, I fixed my grandma''s Wi-Fi. The next day, I was troubleshooting my uncle''s printer. Now, I''m on call 24/7 for every tech issue in the family, and I haven''t known peace since. Does anybody know how to escape this fate (or at least minimize the damage)?',
-      3
+      4
     ),
     (
       'The great just-one-more-feature disaster',
       'It all started with a simple project. "I''ll just add this one feature," I said. "It won''t take long," I assured myself. Fast forward six months, and my "simple" project now has a database, an AI chatbot, a dark mode toggle, and a blockchain integration for no reason. Send help.',
-      4
+      5
     ),
     (
       'My rubber duck is a better programmer than me',
       'Whenever I get stuck on a bug, I explain my problem to a rubber duck. Magically, I always find the answer mid-sentence. Does this mean the duck is secretly the brains of the operation?',
-      5
+      1
     ),
     (
       'When stack overflow goes down',
       'I opened my browser, typed in my latest error message, and hit enter. But instead of answers, I was met with the unthinkable: "Stack Overflow is temporarily down." My hands trembled. My vision blurred. How do you code when you can''t copy-paste solutions from strangers on the internet?',
-      6
+      2
     );
 
   ALTER SEQUENCE member_id_seq RESTART WITH 7;
