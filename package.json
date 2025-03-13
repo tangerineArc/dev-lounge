@@ -1,5 +1,5 @@
 {
-  "name": "your-app-name",
+  "name": "clubhouse",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "dev": "node --watch app.js",
     "start": "node app.js",
     "sow": "node seeds.js",
-    "dwell": "node pasture.js"
+    "schema-creation": "node schema.js"
   },
   "keywords": [],
   "author": "Swagatam Pati <swagatamheroz@gmail.com>",
