@@ -1,14 +1,14 @@
 import * as db from "../db/queries.js";
 
-const serializer = (user, done) => {
-  done(null, user.id);
+const serializer = (member, done) => {
+  done(null, member.id);
 }
 
 const deserializer = async (id, done) => {
   try {
-    const user = await db.selectUserById(id);
+    const member = await db.selectMemberById(id);
 
-    done(null, user);
+    done(null, member);
   } catch (err) {
     done(err);
   }

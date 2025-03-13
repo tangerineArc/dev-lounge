@@ -5,18 +5,18 @@ import * as db from "../db/queries.js";
 
 const verifyCallback = async (username, password, done) => {
   try {
-    const user = await db.selectUserByUsername(username);
+    const member = await db.selectMemberByUsername(username);
 
-    if (!user) {
+    if (!member) {
       return done(null, false, { message: "Incorrect username" });
     }
 
-    const match = await bcrypt.compare(password, user.password_hash);
+    const match = await bcrypt.compare(password, member.password_hash);
     if (!match) {
       return done(null, false, { message: "Incorrect password" });
     }
 
-    return done(null, user);
+    return done(null, member);
   } catch (err) {
     return done(err);
   }
