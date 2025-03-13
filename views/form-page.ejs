@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <%- include("partials/navbar.ejs") %>
+  <%- include("partials/navbar.ejs", { currentUser: locals.currentUser ? true : false }) %>
 
   <main>
     <div>
@@ -26,24 +26,24 @@
     <form action="<%= actionRoute %>" method="POST">
       <div>
         <label for="username">Username</label>
-        <input type="text" name="username" id="username" autofocus>
+        <input type="text" name="username" id="username" autofocus required>
       </div>
       <div>
         <label for="password">Password</label>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" required>
       </div>
       <% if (page === "sign-up") { %>
         <div>
           <label for="confirm-password">Confirm Password</label>
-          <input type="password" name="confirmPassword" id="confirm-password">
+          <input type="password" name="confirmPassword" id="confirm-password" required>
         </div>
         <div>
           <label for="first-name">First name</label>
-          <input type="text" name="first_name" id="first-name">
+          <input type="text" name="first_name" id="first-name" required>
         </div>
         <div>
           <label for="last-name">Last name</label>
-          <input type="text" name="last_name" id="last-name">
+          <input type="text" name="last_name" id="last-name" required>
         </div>
       <% } %>
       <button type="submit">
