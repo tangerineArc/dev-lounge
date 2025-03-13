@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
 *,
@@ -20,4 +20,22 @@ a {
 
 button {
   cursor: pointer;
+  appearance: none;
+  border: none;
+
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+input {
+  appearance: none;
+  border: none;
+  outline: none;
+
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  font-family: inherit;
 }

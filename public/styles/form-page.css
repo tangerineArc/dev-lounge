@@ -1,0 +1,77 @@
+body {
+  background-color: #0f0f0f;
+  min-height: 100vh;
+
+  color: #fafaff;
+
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  margin-top: 8rem;
+
+  & > div {
+    padding: 2rem 1.5rem;
+    background-color: #0d2818aa;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    color: #16db65;
+    font-family: "Audiowide", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+
+  & > form {
+    background-color: #161a1d;
+    padding: 1.5rem 2rem;
+    width: 400px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      & > label {
+        font-size: 0.9rem;
+        color: #98c1d9;
+        color: #16db65;
+
+        margin-left: 0.2rem;
+      }
+
+      & > input {
+        padding: 0.6rem;
+        border-radius: 5px;
+        background-color: #343a40;
+        background-color: #0d2818;
+        border-bottom: 2px solid #adb5bd;
+        border-bottom: 2px solid #058c42;
+      }
+
+      & > input:focus {
+        border-bottom: 2px solid #16db65;
+      }
+    }
+
+    & > button {
+      width: fit-content;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      background-color: #0d2818;
+
+      color: #16db65;
+    }
+
+    & > button:hover {
+      color: #ccff33;
+    }
+  }
+}
