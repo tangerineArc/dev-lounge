@@ -17,7 +17,7 @@ main {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
-    color: #16db65;
+    color: lightgrey;
     font-family: "Audiowide", sans-serif;
     text-transform: uppercase;
     font-size: 1.2rem;
@@ -41,7 +41,6 @@ main {
 
       & > label {
         font-size: 0.9rem;
-        color: #98c1d9;
         color: #16db65;
 
         margin-left: 0.2rem;
@@ -52,7 +51,6 @@ main {
         border-radius: 5px;
         background-color: #343a40;
         background-color: #0d2818;
-        border-bottom: 2px solid #adb5bd;
         border-bottom: 2px solid #058c42;
       }
 

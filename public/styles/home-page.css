@@ -32,7 +32,7 @@ main {
     & > h1 {
       font-family: "Audiowide", sans-serif;
       font-size: 4rem;
-      color: #16db65;
+      color: lightgrey;
     }
   }
 
