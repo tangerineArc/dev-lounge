@@ -9,6 +9,9 @@
   margin: 0;
 
   font-family: "Inter", sans-serif;
+
+  scrollbar-width: thin;
+  scrollbar-color: #058c42 #020202;
 }
 
 a {
