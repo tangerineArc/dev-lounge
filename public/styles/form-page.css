@@ -10,6 +10,8 @@ body {
 
 main {
   margin-top: 8rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
 
   & > div {
     padding: 2rem 1.5rem;
@@ -26,7 +28,7 @@ main {
   & > form {
     background-color: #161a1d;
     padding: 1.5rem 2rem;
-    width: 400px;
+    width: min(400px, 90vw);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 

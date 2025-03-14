@@ -77,3 +77,9 @@ main {
     }
   }
 }
+
+@media (max-width: 400px) {
+  main > div:first-of-type > h1 {
+    font-size: 3.5rem;
+  }
+}

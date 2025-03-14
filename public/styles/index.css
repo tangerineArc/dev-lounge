@@ -32,7 +32,8 @@ button {
   font-weight: normal;
 }
 
-input {
+input,
+textarea {
   appearance: none;
   border: none;
   outline: none;
