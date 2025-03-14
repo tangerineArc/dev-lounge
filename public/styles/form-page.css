@@ -75,3 +75,22 @@ main {
     }
   }
 }
+
+.sign-in-error {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  background-color: #d6282844;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  border: 1px solid #d62828;
+
+  color: #d62828;
+
+  & > svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
