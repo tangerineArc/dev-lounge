@@ -8,6 +8,7 @@
   backdrop-filter: blur(10px);
 
   position: fixed;
+  z-index: 1;
   top: 1rem;
   left: 50%;
   transform: translate(-50%, 0);
