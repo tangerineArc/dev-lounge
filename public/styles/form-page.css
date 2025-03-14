@@ -76,21 +76,35 @@ main {
   }
 }
 
-.sign-in-error {
+.sign-in-error,
+.sign-in-success {
   display: flex;
   align-items: center;
   gap: 1rem;
 
-  background-color: #d6282844;
   padding: 1rem;
   border-radius: 5px;
   margin-bottom: 1rem;
-  border: 1px solid #d62828;
-
-  color: #d62828;
+  width: min(400px, 90vw);
 
   & > svg {
     width: 1.2rem;
     height: 1.2rem;
+
+    flex-shrink: 0;
   }
+}
+
+.sign-in-error {
+  background-color: #d6282844;
+  border: 1px solid #d62828;
+
+  color: #d62828;
+}
+
+.sign-in-success {
+  background-color: #06d6a044;
+  border: 1px solid #06d6a0;
+
+  color: #06d6a0;
 }
