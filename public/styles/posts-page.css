@@ -22,6 +22,7 @@ main {
     background-color: #04471c55;
     border-radius: 10px;
     padding: 1.5rem;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -97,14 +98,12 @@ main {
   }
 }
 
-.sign-in-warning {
-  background-color: #ffff3f88;
+.sign-in-warning,
+.become-a-member-warning,
+.form-validation-error {
   padding: 1.2rem;
   width: 100%;
   border-radius: 5px;
-  border: 1px solid #ffff3f;
-
-  color: #ffff3f;
 
   display: flex;
   align-items: center;
@@ -122,29 +121,25 @@ main {
   }
 }
 
+.sign-in-warning {
+  background-color: #ffff3f88;
+  border: 1px solid #ffff3f;
+
+  color: #ffff3f;
+}
+
+.form-validation-error {
+  background-color: #d6282844;
+  border: 1px solid #d62828;
+
+  color: #d62828;
+}
+
 .become-a-member-warning {
   background-color: #f2008955;
-  padding: 1.2rem;
-  width: 100%;
-  border-radius: 5px;
   border: 1px solid #f20089;
 
   color: #f20089;
-
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  & > svg {
-    width: 1.2rem;
-    height: 1.2rem;
-
-    flex-shrink: 0;
-  }
-
-  & a {
-    text-decoration: underline;
-  }
 }
 
 .create-post-form {
