@@ -9,7 +9,10 @@ import sessionObject from "./auth/session-config.js";
 import localStrategy from "./auth/strategy.js";
 import { deserializer, serializer } from "./auth/transformers.js";
 
+import preventBack from "./middlewares/prevent-back.js";
+
 import indexRouter from "./routes/index-router.js";
+import postsRouter from "./routes/posts-router.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -37,6 +40,9 @@ passport.use(localStrategy);
 passport.serializeUser(serializer);
 passport.deserializeUser(deserializer);
 
+/* middleware to prevent page-caching */
+app.use(preventBack);
+
 /* middleware for providing currentUser data to all routes */
 app.use((req, res, next) => {
   res.locals.currentSession = req.session;
@@ -46,6 +52,7 @@ app.use((req, res, next) => {
 
 /* routes */
 app.use("/", indexRouter);
+app.use("/posts", postsRouter);
 
 /* non-existent-routes handler */
 app.all("*", (req, res) => {
