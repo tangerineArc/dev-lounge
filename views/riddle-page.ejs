@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/styles/index.css">
+  <link rel="stylesheet" href="/styles/navbar.css">
+  <link rel="stylesheet" href="/styles/riddle-page.css">
+
+  <title>DevLounge | Riddle</title>
+</head>
+
+<body>
+  <%- include("partials/navbar.ejs") %>
+
+  <main>
+    <header>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+        <path d="m9 12 2 2 4-4" />
+      </svg>
+      <p>Become a member</p>
+    </header>
+
+    <div>
+      <div>Here's a riddle for you</div>
+      <p>
+        I am small, yet I hold great power. Without me, code can collapse into chaos. In Python, I am ignored, but in
+        C, my
+        absence is a fatal mistake. I quietly sit at the end of statements, ensuring order in the programming world.
+        Forget me,
+        and you will face errors; misuse me, and confusion follows. Who am I?
+      </p>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 6v12" />
+          <path d="M17.196 9 6.804 15" />
+          <path d="m6.804 9 10.392 6" />
+        </svg>
+        The answer is a single character
+      </div>
+    </div>
+
+    <form action="/become-knight" method="POST">
+      <input type="text" name="answer" placeholder="your answer ..." autofocus required maxlength="1">
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+</body>
+
+</html>
