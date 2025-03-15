@@ -9,7 +9,7 @@ const SQL = `
 DO $$
 BEGIN
   IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'status') THEN
-    create TYPE status AS ENUM ('commoner', 'knight', 'elite');
+    CREATE TYPE status AS ENUM ('commoner', 'knight', 'elite');
   END IF;
 END
 $$;
@@ -36,8 +36,11 @@ CREATE TABLE IF NOT EXISTS post (
 async function main() {
   console.log("schema creation started ...");
 
-  const client = new pg.Client({
+  const client = new pg.native.Client({
     connectionString: process.env.DB_CONNECTION_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   });
 
   await client.connect();
