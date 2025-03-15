@@ -16,6 +16,7 @@ async function generateQuery() {
   );
 
   return `
+  DROP TABLE IF EXISTS user_sessions;
   DELETE FROM post;
   DELETE FROM member;
 
