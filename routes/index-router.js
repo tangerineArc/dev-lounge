@@ -1,33 +1,47 @@
 import { Router } from "express";
 
 import {
-  loginUser,
-  logoutUser,
-  registerNewUser,
-  renderConfidentialPage,
+  makeMemberKnight,
+  renderBecomeKnightPage,
   renderHomePage,
-  renderLoginPage,
-  renderLoginSuccessPage,
-  renderRegisterPage,
+  renderProfilePage,
+  renderSignInPage,
+  renderSignUpPage,
+  signInMember,
+  signOutMember,
+  signUpMember,
 } from "../controllers/index-controllers.js";
+
+import {
+  checkAuthentication,
+  checkCommonerStatus,
+} from "../middlewares/authenticators.js";
 
 const indexRouter = Router();
 
 indexRouter.get("/", renderHomePage);
 
-indexRouter.get("/login", renderLoginPage);
-indexRouter.post("/login", loginUser);
+indexRouter.get("/profile/:id", checkAuthentication, renderProfilePage);
 
-indexRouter.get("/register", renderRegisterPage);
-indexRouter.post("/register", registerNewUser);
+indexRouter.get(
+  "/become-knight",
+  checkAuthentication,
+  checkCommonerStatus,
+  renderBecomeKnightPage
+);
+indexRouter.post(
+  "/become-knight",
+  checkAuthentication,
+  checkCommonerStatus,
+  makeMemberKnight
+);
 
-indexRouter.get("/protected-route", renderConfidentialPage);
+indexRouter.get("/sign-in", renderSignInPage);
+indexRouter.post("/sign-in", signInMember);
 
-indexRouter.get("/logout", logoutUser);
-indexRouter.get("/login-success", renderLoginSuccessPage);
+indexRouter.get("/sign-up", renderSignUpPage);
+indexRouter.post("/sign-up", signUpMember);
 
-indexRouter.get("/login-failure", (req, res) => {
-  res.send("Credentials do not match");
-});
+indexRouter.get("/sign-out", checkAuthentication, signOutMember);
 
 export default indexRouter;
