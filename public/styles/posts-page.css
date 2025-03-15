@@ -59,6 +59,8 @@ main {
       align-items: center;
       gap: 1rem;
 
+      color: lightgrey;
+
       & > svg {
         flex-shrink: 0;
 
@@ -68,15 +70,12 @@ main {
 
     & > div {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 1rem;
 
-      & svg {
-        width: 0.9rem;
-        height: 0.9rem;
-      }
-
-      & > p {
+      & > p,
+      & > a {
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -88,6 +87,11 @@ main {
 
         color: #16db65;
         font-size: 0.8rem;
+
+        & > svg {
+          width: 0.9rem;
+          height: 0.9rem;
+        }
       }
     }
 
